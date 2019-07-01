@@ -1,0 +1,26 @@
+# Site settings
+title: Code Chapter
+email: 
+description: >
+  High quality resource for fellow Tech Leads, Engineering Managers and CTOs.
+images_path: "/assets/images/"
+image:
+  url: ""
+logo-64: "logo-64.jpg"
+url: "https://codechapter.com"
+paginate:	5
+name: 'Code Chapter'
+permalink: /:title/
+
+# Google Analytics
+analytics_id: ''
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  parse_block_html: true
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed

@@ -1,0 +1,14 @@
+<main class="content" role="main">
+  {% include breadcrumbs.html %}
+
+  <header class="blog-header">
+      <h1 class="blog-title">{{ page.title }}</h1>
+      <h2 class="blog-description">{{ page.description }}</h2>
+  </header>
+
+  {% include share.html %}
+
+  {% include post-items.html posts=site.posts tag=page.tag %}
+</main>
+
+{% include footer.html %}

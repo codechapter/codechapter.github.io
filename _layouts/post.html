@@ -1,0 +1,45 @@
+---
+layout: default
+jsonld: post
+---
+<main class="content" role="main">
+  {% include breadcrumbs.html %}
+
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">{{ page.title }}</h1>
+    </div>
+
+    <section class="post-content">
+      <a name="topofpage"></a>
+      <amp-img
+        width="{{ page.image.width }}"
+        height="{{ page.image.height }}"
+        layout="responsive"
+        src="{{ site.url | append: site.images_path | append: page.image.url }}"
+        alt="{{ page.title }}">
+      </amp-img>
+      {{content}}
+    </section>
+    <footer class="post-footer">
+      {% include share.html %}
+
+      <section class="post-comments">
+        <amp-iframe width=600 height=140
+          layout="responsive"
+          sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
+          resizable
+          src="https://amp.codechapter.com/disqus.html?id={{ page.id }}">
+          <div overflow></div>
+        </amp-iframe>
+      </section>
+    </footer>
+    
+    <footer class="site-footer">
+      <section class="poweredby">Published with <a href="http://jekyllrb.com" class="text" rel="nofollow"> Jekyll</a> and <a href="https://github.com/ageitgey/amplify" class="text" rel="nofollow">Amplify</a></section>
+      <div class="inner">
+        <section class="copyright">Copyright &copy; Code Chapter Authors {{ site.time | date: '%Y' }}<br>All rights reserved.</section>
+      </div>
+    </footer>
+  </article>
+</main>

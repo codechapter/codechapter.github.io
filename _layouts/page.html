@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<main class="content" role="main">
+  {% include breadcrumbs.html %}
+
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">{{ page.title }}</h1>
+    </div>
+    <section class="post-content">
+      <a name="topofpage"></a>
+      {{content}}
+    </section>
+  </article>
+
+  {% include share.html %}
+</main>
+
+{% include footer.html %}

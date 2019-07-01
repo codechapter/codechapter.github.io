@@ -1,0 +1,16 @@
+<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb">
+    <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="{{ site.url }}" class="underline">
+      <span itemprop="name">Home</span>
+    </a>
+    <meta itemprop="position" content="1"/>
+  </li>
+  {% for crumb in page.breadcrumbs %}
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb">
+      <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="{{ site.url }}{{ crumb.url }}" class="underline">
+        <span itemprop="name">{{ crumb.title }}</span>
+      </a>
+      <meta itemprop="position" content="{{ forloop.index | plus: 1 }}"/>
+    </li>
+  {% endfor %}
+</ol>

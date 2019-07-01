@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="bio">
+    <div class="logo">
+      <a href="{{ site.url }}/" class="logo">
+        <span class="logo">
+          <amp-img
+            src="{{ site.url | append: site.images_path | append: site.logo-64 }}"
+            width="48"
+            height="48"
+            alt="{{ site.name }}">
+          </amp-img>
+        </span>
+      </a>
+    </div>
+  </div>
+  <div class="page-links">
+    {% if page.url != '/about/' %}
+      <a class="underline" href="{{ site.baseurl }}/about">About</a>
+    {% endif %}
+    <a class="underline" href="{{ site.url | append: '/feed.xml' }}">RSS</a>
+  </div>
+  <div class="clear"></div>
+</header>

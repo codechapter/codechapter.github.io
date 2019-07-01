@@ -1,0 +1,21 @@
+<div class="cf frame">
+  {% for post in include.posts %}
+    {% if (include.tag == blank) or (post.tags contains include.tag) %}
+    <article class="post" role="article">
+      <div class="article-item">
+        <header class="post-header">
+          <h2 class="post-title">
+            <a href="{{ site.baseurl }}{{ post.url }}" class="text">{{ post.title }}</a>
+          </h2>
+        </header>
+        <section class="post-excerpt">
+          <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+        </section>
+        <div class="post-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
+        </div>
+      </div>
+    </article>
+    {% endif %}
+  {% endfor %}
+</div>

@@ -1,0 +1,35 @@
+---
+layout: default
+jsonld: index
+---
+
+<main class="content" role="main">
+
+  <header class="blog-header">
+      <h1 class="blog-title">{{ site.title }}</h1>
+      <h2 class="blog-description">{{ site.description }}</h2>
+  </header>
+  {% include blog-index.html %}
+  {% include share.html %}
+  {% include post-items.html posts=paginator.posts %}
+
+  <nav class="pagination" role="navigation">
+    {% if paginator.next_page %}
+      <a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.next_page}}">&larr; Older posts</a>
+    {% else %}
+      <a class="newer-posts disabled">&larr; Older posts</a>
+    {% endif %}
+    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.previous_page %}
+      {% if paginator.page == 2 %}
+        <a class="older-posts" href="{{ site.baseurl }}/">Newer posts &rarr;</a>
+      {% else %}
+        <a class="older-posts" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer posts &rarr;</a>
+      {% endif %}
+    {% else %}
+      <a class="older-posts disabled">Newer posts &rarr;</a>
+    {% endif %}
+  </nav>
+</main>
+
+{% include footer.html %}
