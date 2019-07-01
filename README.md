@@ -1,6 +1,6 @@
 # Code Chapter
 
-The place of quality content from Tech Leads, Engineering Managers and CTOs.
+The place of quality content for Tech Leads, Engineering Managers and CTOs.
 
 ## Contribution Guidelines
 
